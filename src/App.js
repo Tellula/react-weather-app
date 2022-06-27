@@ -4,6 +4,7 @@ import CurrentWeather from "./components/current-weather/current-weather";
 import { WEATHER_API_URL } from "./components/api";
 import { WEATHER_API_KEY } from "./components/api";
 import Forecast from "./components/forecast/forecast";
+import logo from "./logo.png";
 import "./App.css";
 
 function App() {
@@ -32,12 +33,14 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-
   return (
+    <div>
+    <img className="logo" src={logo} alt="" />
     <div className="container">
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}
+    </div>
     </div>
   );
 }

@@ -3,8 +3,10 @@ body {
   font-family: 'Roboto', Arial !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: darkslategrey;
+background-color: rgb(15, 139, 240);
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
