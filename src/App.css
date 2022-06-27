@@ -1,20 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
 
+body,
+html {
+  background: url(bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+}
 
-
-.container {
+.container-app {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 50em;
   margin: 20px auto;
-  
+  height: 100vh;
 }
 
 .logo {
-  position: relative;
-  top: 0%;
-  left: 25% ;
-  width: 1000px;
+  left: 25%;
+  width: 800px;
   margin-bottom: -100px;
+  margin-top: 0;
 }

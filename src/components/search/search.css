@@ -1,6 +1,7 @@
 .searchBar {
-    box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
-    opacity: 0.9;
-    
+  box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+  opacity: 0.9;
+  width: 300px;
+  color: rgb(22, 22, 22);
+  margin: 20px auto 0 auto;
 }
-

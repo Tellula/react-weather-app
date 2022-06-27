@@ -35,12 +35,12 @@ function App() {
 
   return (
     <div>
-    <img className="logo" src={logo} alt="" />
-    <div className="container">
-      <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecast && <Forecast data={forecast} />}
-    </div>
+      <div className="container-app">
+        <img className="logo" src={logo} alt="" />
+        <Search onSearchChange={handleOnSearchChange} />
+        {currentWeather && <CurrentWeather data={currentWeather} />}
+        {forecast && <Forecast data={forecast} />}
+      </div>
     </div>
   );
 }
