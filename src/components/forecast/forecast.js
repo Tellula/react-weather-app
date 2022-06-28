@@ -8,14 +8,9 @@ import {
 import moment from "moment";
 import "./forecast.css";
 
-
-
 const Forecast = ({ data }) => {
-
-
   return (
     <>
-      <label className="title-daily">5 days forecast</label>
       <Accordion allowZeroExpanded>
         {data.list.map((item, index) => (
           <AccordionItem key={index}>
@@ -27,7 +22,14 @@ const Forecast = ({ data }) => {
                     alt="weather"
                     className="icon-small"
                   />
-                  <label className="day">{moment.unix(item.dt).format("LLLL").split(" ").splice(0,4).join(" ")}</label>
+                  <label className="day">
+                    {moment
+                      .unix(item.dt)
+                      .format("LLLL")
+                      .split(" ")
+                      .splice(0, 4)
+                      .join(" ")}
+                  </label>
                   <label className="description">
                     {item.weather[0].description}
                   </label>
