@@ -1,20 +1,7 @@
 import "./current-weather.css";
-import { getCurrentDate } from "../api";
+import moment from "moment";
 
 const CurrentWeather = ({ data }) => {
-  const currentDay = getCurrentDate();
-
-  const WEEK_DAYS = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-
-  const currentStringDay = new Date().getDay();
 
   return (
     <div>
@@ -23,7 +10,7 @@ const CurrentWeather = ({ data }) => {
           <div className="">
             <p className="city">{data.city}</p>
             <p className="title-today">
-              {WEEK_DAYS[currentStringDay - 1]} {currentDay}{" "}
+            {moment.unix(data.dt).format("LLLL").split(" ").splice(0,4).join(" ")}
             </p>
             <p className="weather-description">{data.weather[0].description}</p>
           </div>

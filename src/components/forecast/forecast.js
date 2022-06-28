@@ -5,30 +5,19 @@ import {
   AccordionItemPanel,
   AccordionItemButton,
 } from "react-accessible-accordion";
+import moment from "moment";
 import "./forecast.css";
 
-const WEEK_DAYS = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
+
 
 const Forecast = ({ data }) => {
-  const currentDay = new Date().getDay();
 
-  const daysToForcast = WEEK_DAYS.slice(currentDay, WEEK_DAYS.length).concat(
-    WEEK_DAYS.slice(0, currentDay)
-  );
 
   return (
     <>
-      <label className="title-daily">7 days forecast</label>
+      <label className="title-daily">5 days forecast</label>
       <Accordion allowZeroExpanded>
-        {data.list.splice(0, 7).map((item, index) => (
+        {data.list.map((item, index) => (
           <AccordionItem key={index}>
             <AccordionItemHeading>
               <AccordionItemButton>
@@ -38,12 +27,11 @@ const Forecast = ({ data }) => {
                     alt="weather"
                     className="icon-small"
                   />
-                  <label className="day">{daysToForcast[index]}</label>
+                  <label className="day">{moment.unix(item.dt).format("LLLL").split(" ").splice(0,4).join(" ")}</label>
                   <label className="description">
                     {item.weather[0].description}
                   </label>
                   <label className="min-max">
-                    {Math.round(item.main.temp_min)}°C /{" "}
                     {Math.round(item.main.temp_max)}°C
                   </label>
                 </div>
