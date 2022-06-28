@@ -26,12 +26,15 @@ function App() {
       .then(async (response) => {
         const weatherResponse = await response[0].json();
         const forecastResponse = await response[1].json();
-
+        forecastResponse.list = forecastResponse.list.filter((ele) => {
+          return ele.dt_txt.split(" ")[1] === "12:00:00";
+        });
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
         setForecast({ city: searchData.label, ...forecastResponse });
       })
       .catch((err) => console.log(err));
   };
+
 
   return (
     <div>
