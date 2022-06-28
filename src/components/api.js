@@ -11,3 +11,14 @@ export const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
 export const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5";
 
 export const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
+export const getCurrentDate = (separator = ".") => {
+  let newDate = new Date();
+  let date = newDate.getDate();
+  let month = newDate.getMonth() + 1;
+  let year = newDate.getFullYear();
+
+  return `${date}${separator}${
+    month < 10 ? `0${month}` : `${month}`
+  }${separator}${year}`;
+};
