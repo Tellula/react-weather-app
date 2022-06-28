@@ -5,3 +5,9 @@
   color: rgb(22, 22, 22);
   margin: 20px auto 0 auto;
 }
+
+.checkbox {
+  margin: 5px 10px 0 auto;
+  text-align: center;
+  font-size: 18px;
+}
